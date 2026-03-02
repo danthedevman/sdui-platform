@@ -23,13 +23,6 @@ export const schema = `
     type: String!
     props: JSON!
   }
-
-  type Product {
-    id: ID!
-    name: String!
-    priceCents: Int!
-    imageUrl: String
-  }
 `;
 
 export const resolvers = {
@@ -43,9 +36,5 @@ export const resolvers = {
     screenByRoute: async (_, { route }) =>
       mockData.screens.find((s) => s.route === route) || null,
 
-    productsByIds: async (_, { ids }) => {
-      const set = new Set(ids);
-      return mockData.products.filter((p) => set.has(p.id));
-    }
   }
 };
