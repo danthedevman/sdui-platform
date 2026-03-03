@@ -14,8 +14,8 @@ const app = Fastify({
 });
 
 await app.register(helmet, {
-  contentSecurityPolicy: false
-})
+  contentSecurityPolicy: false,
+});
 
 await app.register(cors, {
   origin: true,
@@ -25,7 +25,7 @@ await app.register(cors, {
 await app.register(mercurius, {
   schema,
   resolvers,
-  graphiql: true,
+  graphiql: process.env.NODE_ENV !== "production",
 });
 
 app.get("/", async () => ({
