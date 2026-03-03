@@ -1,10 +1,13 @@
-import { useScreen } from "./hooks/useScreen.js";
-import Renderer from "./pages/Renderer.jsx";
+// src/App.jsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import RouteScreen from "./pages/RouteScreen";
 
 export default function App() {
-  const { data, loading } = useScreen("/");
-
-  if (loading) return <p>Loading...</p>;
-
-  return <Renderer screen={data} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<RouteScreen />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }

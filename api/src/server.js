@@ -7,7 +7,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-
 const app = Fastify({
   logger: {
     level: process.env.NODE_ENV === "production" ? "info" : "debug",

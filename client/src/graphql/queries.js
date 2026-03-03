@@ -1,9 +1,14 @@
 export const GET_SCREEN = `
-  query GetScreen($route: String!) {
-    screenByRoute(route: $route) {
+query GetScreen($route: String!) {
+  screenByRoute(route: $route) {
+    id
+    route
+    layout {
       id
-      title
-      route
+      version
+    }
+    slots {
+      name
       components {
         id
         type
@@ -11,4 +16,5 @@ export const GET_SCREEN = `
       }
     }
   }
+}
 `;

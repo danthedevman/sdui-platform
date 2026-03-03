@@ -2,40 +2,65 @@ export const mockData = {
   screens: [
     {
       id: "home",
-      title: "Home",
       route: "/",
-      components: [
+      title:"home",
+      layout: { id: "marketing", version: 1 },
+      slots: [
         {
-          id: "hero-1",
-          type: "Hero",
-          props: {
-            headline: "Welcome",
-            subheadline: "This UI is driven by the server.",
-            ctaText: "Shop now",
-            ctaHref: "/shop"
-          }
+          name: "header",
+          components: [{ id: "nav-1", type: "Navbar", props: {} }],
         },
         {
-          id: "banner-1",
-          type: "Banner",
-          props: {
-            tone: "info",
-            text: "Free shipping over $50"
-          }
-        }
-      ]
+          name: "main",
+          components: [
+            {
+              id: "banner-1",
+              type: "Banner",
+              props: { tone: "info", text: "Homepage" },
+            },
+            {
+              id: "hero-1",
+              type: "Hero",
+              props: { headline: "Welcome", subheadline: "Server-driven UI" },
+            },
+          ],
+        },
+        {
+          name: "footer",
+          components: [{ id: "foot-1", type: "Footer", props: {} }],
+        },
+      ],
     },
     {
-      id: "shop",
-      title: "Shop",
-      route: "/shop",
-      components: [
+      id: "about",
+      route: "/about",
+      title:"about",
+      layout: { id: "dashboard", version: 1 },
+      slots: [
         {
-          id: "header-1",
-          type: "SectionHeader",
-          props: { title: "Shop", subtitle: "Pick something nice." }
-        }
-      ]
+          name: "header",
+          components: [{ id: "nav-1", type: "Navbar", props: {} }],
+        },
+        {
+          name: "main",
+          components: [
+            {
+              id: "banner-1",
+              type: "Banner",
+              props: { tone: "info", text: "About page" },
+            },
+            {
+              id: "hero-1",
+              type: "Hero",
+              props: { headline: "Welcome", subheadline: "Server-driven UI" },
+            },
+          ],
+        },
+        {
+          name: "footer",
+          components: [{ id: "foot-1", type: "Footer", props: {} }],
+        },
+      ],
     }
-  ]
+  ],
 };
