@@ -14,14 +14,14 @@ export const mockData = {
           name: "main",
           components: [
             {
-              id: "banner-1",
-              type: "Banner",
-              props: { tone: "info", text: "Homepage" },
-            },
-            {
               id: "hero-1",
               type: "Hero",
               props: { headline: "Welcome", subheadline: "Server-driven UI" },
+            },
+            {
+              id: "banner-1",
+              type: "Banner",
+              props: { tone: "info", text: "Homepage" },
             },
           ],
         },
